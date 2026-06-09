@@ -1,5 +1,5 @@
 class Solution(object):
-    def myPow(self, x, n):
+    def findPow(self,x,n):
         if n==0:
             return 1
         a=self.myPow(x,n//2)
@@ -7,3 +7,9 @@ class Solution(object):
             return a*a
         else:
             return a*a*x
+
+    def myPow(self, x, n):
+        if n>=0:
+            return self.findPow(x,n)
+        else:
+            return 1/self.findPow(x,(-n))
