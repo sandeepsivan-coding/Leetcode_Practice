@@ -1,0 +1,13 @@
+class Solution(object):
+    def firstUniqChar(self, s):
+        dict1={}
+        for i in s:
+            if i not in dict1:
+                dict1[i]=1
+            else:
+                dict1[i]+=1
+        
+        for i in range(len(s)):
+            if dict1[s[i]]==1:
+                return i
+        return -1
